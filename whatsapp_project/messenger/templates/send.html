@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Messages</title>
+</head>
+<body>
+    <h1>Send WhatsApp Messages</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Send Messages</button>
+    </form>
+    <ul>
+        {% for contact in contacts %}
+        <li>{{ contact.name }} - {{ contact.whatsapp_number }} - {{ contact.message }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
